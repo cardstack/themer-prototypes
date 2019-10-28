@@ -15,5 +15,6 @@ yarn install
 ## Serving locally
 
 ```sh
-yarn start
+cd themer-frontend
+ember s
 ```
