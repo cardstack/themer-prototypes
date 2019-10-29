@@ -6,15 +6,13 @@ export default class Monaco extends Controller {
 
 }`;
 
-  crimes = "";
-
   @action
-  editorReady (editor) {
+  editorReady (/*editor*/) {
     // use editor instance
   }
 
   @action
-  handleEdit(code) {
+  handleEdit(/*code*/) {
     // parse and apply styling?
   }
 
