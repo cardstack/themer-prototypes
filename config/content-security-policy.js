@@ -9,7 +9,7 @@ export default function(environment) {
     policy: {
       'default-src':  ["'self'"],
       'script-src':   ["'self'"],
-      'font-src':     ["'self'"],
+      'font-src':     ["*"],
       'connect-src':  ["'self'"],
       'img-src':      ["'self'"],
       'style-src':    ["'self'"],
