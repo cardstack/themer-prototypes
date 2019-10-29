@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "description": "Small description for themer-frontend goes here",
-  "repository": "",
+  "repository": "https://github.com/cardstack/themer-prototypes",
   "license": "MIT",
-  "author": "",
+  "author": "Jen Weber <j@jenweber.me>",
   "directories": {
     "doc": "doc",
     "test": "tests"
