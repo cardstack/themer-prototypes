@@ -2,9 +2,9 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 
 export default class Monaco extends Controller {
-  sample1 = `body {
-    font-family: serif!important;
-  }`;
+  sample1 = `.default-card {
+
+}`;
 
   crimes = "";
 
