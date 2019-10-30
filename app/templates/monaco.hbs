@@ -8,10 +8,13 @@
 {{code-editor
   language="css"
   code=this.codeSamples.brokenCss
-  onChange=(action this.handleEdit)
+  onChange=(action (mut this.codeSamples.brokenCss))
   theme="vs-dark"
   onReady=(action editorReady)
+  onValidate=this.handleValidate
 }}
+
+<style id="card-styles"></style>
 
 {{!-- {{code-editor
   language="html"

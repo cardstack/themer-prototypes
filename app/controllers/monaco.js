@@ -1,37 +1,45 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import {inject as service } from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default class Monaco extends Controller {
   @service 
   codeSamples
 
-  editor;
+  editor; // the instance of the editor
+  monaco;  // overall monaco state
 
   @action
-  editorReady (editor) {
+  editorReady (editor, monaco) {
     this.editor = editor
+    this.monaco = monaco
+    setInterval(this.validateAndRender, 5000)
   }
 
   @action
-  handleEdit(code, monaco) {
-    debugger
+  validateAndRender() {
+    let errors = this.monaco.getModelMarkers({})
+    if (errors.length) {
+      return
+    } else {
+      this.preview()
+    }
   }
 
   @action
   preview() {
-    var css = this.sample1,
-    head = document.head || document.getElementsByTagName('head')[0],
-    style = document.createElement('style');
+    var css = this.codeSamples.brokenCss
+    let newStyle = document.createElement('style')
+    newStyle.setAttribute('id', 'card-styles')
 
-    head.appendChild(style);
+    document.querySelector('#card-styles').replaceWith(newStyle)
 
-    style.type = 'text/css';
-    if (style.styleSheet){
+    newStyle.type = 'text/css';
+    if (newStyle.styleSheet){
       // This is required for IE8 and below.
-      style.styleSheet.cssText = css;
+      newStyle.styleSheet.cssText = css;
     } else {
-      style.appendChild(document.createTextNode(css));
+      newStyle.appendChild(document.createTextNode(css));
     }
   }
 }
