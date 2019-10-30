@@ -6,14 +6,16 @@ export default class Monaco extends Controller {
   @service 
   codeSamples
 
+  editor;
+
   @action
-  editorReady (/*editor*/) {
-    // use editor instance
+  editorReady (editor) {
+    this.editor = editor
   }
 
   @action
-  handleEdit(/*code*/) {
-    // parse and apply styling?
+  handleEdit(code, monaco) {
+    debugger
   }
 
   @action

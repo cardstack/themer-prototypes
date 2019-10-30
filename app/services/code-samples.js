@@ -5,6 +5,10 @@ export default Service.extend({
 
   }`,
 
+  brokenCss: `.default-card {
+    !!!!!
+}`,
+
   markup: `
   <div data-test-isolated-card="local-hub::my-card::one" class="isolated-card default-card">
 
