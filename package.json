@@ -52,5 +52,8 @@
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.18.1"
   }
 }
