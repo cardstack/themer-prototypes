@@ -8,7 +8,6 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('monaco');
-  this.route('codemirror');
 });
 
 export default Router;
