@@ -1,51 +1,47 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  defaultCss: `.default-card {
+  defaultCss: `.card-container {}
 
-}`,
+.field-title {}
+
+.field-is-submitted {}
+
+.field-score {}
+`,
 
   brokenCss: `.default-card {
     !!!!!
 }`,
 
-  markup: `
-  <div data-test-isolated-card="local-hub::my-card::one" class="isolated-card default-card">
-
-  <div class="field-renderer view-field field-title field-type-cardstack-core-types-string" data-test-field="title"
-    data-test-field-type="@cardstack/core-types::string" data-test-field-mode="view">
-
-    <span data-test-string-field-viewer-label="">
+  markup: `<div class="isolated-card default-card card-container">
+  <div class="field-renderer view-field field-title field-type-cardstack-core-types-string">
+    <span>
       title:
     </span>
-    <span data-test-string-field-viewer-value="">
+    <span>
       So cool!
     </span>
-
   </div>
 
-  <div class="field-renderer view-field field-is-submitted field-type-cardstack-core-types-boolean"
-    data-test-field="is-submitted" data-test-field-type="@cardstack/core-types::boolean" data-test-field-mode="view">
-
-    <span data-test-boolean-field-viewer-label="">
+  <div class="field-renderer view-field field-is-submitted field-type-cardstack-core-types-boolean">
+    <span>
       is-submitted:
     </span>
-    <span data-test-boolean-field-viewer-value="">
+    <span>
       false
     </span>
 
   </div>
 
-  <div class="field-renderer view-field field-score field-type-cardstack-core-types-integer" data-test-field="score"
-    data-test-field-type="@cardstack/core-types::integer" data-test-field-mode="view">
+  <div class="field-renderer view-field field-score field-type-cardstack-core-types-integer">
 
-    <span data-test-integer-field-viewer-label="">
+    <span>
       score:
     </span>
-    <span data-test-integer-field-viewer-value="">
-
+    <span>
+      12
     </span>
-
   </div>
 </div>
   `,
