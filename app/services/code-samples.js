@@ -3,7 +3,7 @@ import Service from '@ember/service';
 export default Service.extend({
   defaultCss: `.default-card {
 
-  }`,
+}`,
 
   brokenCss: `.default-card {
     !!!!!

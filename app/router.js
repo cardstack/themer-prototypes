@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('monaco');
+  this.route('monaco', function() {});
 });
 
 export default Router;
