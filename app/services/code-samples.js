@@ -1,7 +1,7 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  defaultCss: `.card-container {}
+  genericCss: `.card-container {}
 
 .field-title {}
 
@@ -10,11 +10,7 @@ export default Service.extend({
 .field-score {}
 `,
 
-  brokenCss: `.default-card {
-    !!!!!
-}`,
-
-  markup: `<div class="isolated-card default-card card-container">
+  genericMarkup: `<div class="isolated-card default-card card-container">
   <div class="field-renderer view-field field-title field-type-cardstack-core-types-string">
     <span>
       title:
@@ -45,4 +41,6 @@ export default Service.extend({
   </div>
 </div>
   `,
+  eventCss: ``,
+  eventMarkup: ``
 });

@@ -1,14 +1,16 @@
-import Controller from '@ember/controller';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { inject as service } from '@ember/service';
 
-export default class Monaco extends Controller {
-  @service 
-  codeSamples
-
+export default class CardEditorComponent extends Component {
   editor; // the instance of the editor
   monaco;  // overall monaco state
   lastCode = '';
+
+  constructor() {
+    super(...arguments)
+    this.css = this.args.css
+    this.markup = this.args.markup
+  }
 
   @action
   editorReady (editor, monaco) {
@@ -19,14 +21,12 @@ export default class Monaco extends Controller {
 
   @action
   validateAndRender() {
-    if (this.lastCode === this.codeSamples.defaultCss) {
-      // skip rendering if content is unchanged
-      // since last render
-      console.log('skip')
+    if (this.lastCode === this.css) {
+      // skip rendering if content is unchanged since last render
       return
     }
     
-    this.lastCode = this.codeSamples.defaultCss
+    this.lastCode = this.css
 
     // if there are no errors in the CSS editor,
     // render the stylesheet. Let warnings and hints slide.
@@ -41,7 +41,7 @@ export default class Monaco extends Controller {
 
   @action
   preview() {
-    var css = this.codeSamples.defaultCss
+    var css = this.css
     let newStyle = document.createElement('style')
     newStyle.setAttribute('id', 'card-styles')
 

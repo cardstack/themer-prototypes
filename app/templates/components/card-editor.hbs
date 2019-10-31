@@ -11,8 +11,8 @@
     <div class="code-panel-heading">CODE</div>
     {{code-editor
       language="css"
-      code=this.codeSamples.defaultCss
-      onChange=(action (mut this.codeSamples.defaultCss))
+      code=@css
+      onChange=(action (mut this.css))
       theme="vs-dark"
       onReady=(action editorReady)
       onValidate=this.handleValidate
@@ -20,7 +20,7 @@
 
     {{code-editor
       language="html"
-      code=this.codeSamples.markup
+      code= this.markup
       theme="vs-dark"
     }}
   </div>
