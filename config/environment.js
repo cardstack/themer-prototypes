@@ -9,7 +9,7 @@ module.exports = function(environment) {
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+        // e.g. EMBER_MODULE_UNIFICATION: true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -43,10 +43,9 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
-  // if (environment === 'production') {
-  //   ENV.rootURL = '/themer-prototypes';
-  //   ENV.locationType = 'hash';
-  // }
+  if (environment === 'production') {
+    // here you can enable a production-specific feature
+  }
 
   return ENV;
 };

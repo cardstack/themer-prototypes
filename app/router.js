@@ -7,7 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('monaco', function() {});
+  this.route('cards', function() {
+    this.route('event');
+    this.route('generic');
+  });
 });
 
 export default Router;
