@@ -8,16 +8,28 @@ export default class Monaco extends Controller {
 
   editor; // the instance of the editor
   monaco;  // overall monaco state
+  lastCode = '';
 
   @action
   editorReady (editor, monaco) {
     this.editor = editor
     this.monaco = monaco
-    setInterval(this.validateAndRender, 5000)
+    setInterval(this.validateAndRender, 3000)
   }
 
   @action
   validateAndRender() {
+    if (this.lastCode === this.codeSamples.defaultCss) {
+      // skip rendering if content is unchanged
+      // since last render
+      console.log('skip')
+      return
+    }
+    
+    this.lastCode = this.codeSamples.defaultCss
+
+    // if there are no warnings in the CSS editor,
+    // render the stylesheet
     let errors = this.monaco.getModelMarkers({})
     if (errors.length) {
       return
@@ -28,7 +40,7 @@ export default class Monaco extends Controller {
 
   @action
   preview() {
-    var css = this.codeSamples.brokenCss
+    var css = this.codeSamples.defaultCss
     let newStyle = document.createElement('style')
     newStyle.setAttribute('id', 'card-styles')
 
