@@ -28,10 +28,11 @@ export default class Monaco extends Controller {
     
     this.lastCode = this.codeSamples.defaultCss
 
-    // if there are no warnings in the CSS editor,
-    // render the stylesheet
+    // if there are no errors in the CSS editor,
+    // render the stylesheet. Let warnings and hints slide.
+    // Technically we can skip this and let the browser make sense of errors...
     let errors = this.monaco.getModelMarkers({})
-    if (errors.length) {
+    if (errors.some(this.checkForErrors)) {
       return
     } else {
       this.preview()
@@ -53,5 +54,9 @@ export default class Monaco extends Controller {
     } else {
       newStyle.appendChild(document.createTextNode(css));
     }
+  }
+
+  checkForErrors(item) {
+    return item.severity === 8
   }
 }
