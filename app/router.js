@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('cards', function() {
     this.route('event');
     this.route('generic');
+    this.route('invoice');
   });
 });
 
