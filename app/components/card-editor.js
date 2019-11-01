@@ -1,10 +1,13 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class CardEditorComponent extends Component {
   editor; // the instance of the editor
   monaco;  // overall monaco state
   lastCode = '';
+  @tracked css;
+  @tracked markup;
 
   constructor() {
     super(...arguments)

@@ -22,13 +22,13 @@
     </div>
     {{code-editor
       language="css"
-      code=@css
+      code=this.css
       onChange=(action (mut this.css))
       theme="vs-dark"
-      onReady=(action editorReady)
-      onValidate=this.handleValidate
+      onReady=(action "editorReady")
     }}
-    <div class="code-panel-heading">HTML Viewer
+    <div class="code-panel-heading">
+      HTML Viewer
       <Hint>
         <p class="hint-text">
           Use this to look up the classes and HTML elements you could write CSS styles for.
