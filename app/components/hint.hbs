@@ -2,6 +2,11 @@
   ?
 </button>
 
-{{#if this.showHint}}
-  {{yield}}
-{{/if}}
+<div>
+  {{#if this.showHint}}
+    <p class="hint-text">
+      {{yield}}
+    </p>
+  {{else}}
+  {{/if}}
+</div>

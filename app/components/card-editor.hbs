@@ -1,46 +1,47 @@
-<div class="grid-container">
+<div class={{if this.showEditingPane "grid-container" "full-width"}}>
   <div class="left-col">
     <h1>Customize the style of the {{@cardName}} Card</h1>
     <div class="display-wrapper">
       {{yield}}
     </div>
     <style id="card-styles"></style>
+    <button {{on "click" this.toggleEditingPane}}>
+      {{if this.showEditingPane "Hide Editor" "Show Editor"}}
+    </button>
   </div>
 
-  <div class="right-col">
-    <div class="code-panel-heading">
-      CSS Editor
-      <Hint>
-        <p class="hint-text">
-          Edit the code below to add some styles! For example, type
-          <code> font-size: 24px;</code>
-          or
-          <code>color: #0000FF;</code>
-          inside some of the brackets, and see your Card update automatically.
-        </p>
-      </Hint>
+  {{#if this.showEditingPane}}
+    <div class="right-col">
+      <div class="code-panel-heading">
+        CSS Editor
+        <Hint @beaconName="csshint">
+            Edit the code below to add some styles! For example, type
+            <code> font-size: 24px;</code>
+            or
+            <code>color: #0000FF;</code>
+            inside some of the brackets, and see your Card update automatically.
+        </Hint>
+      </div>
+      {{code-editor
+        language="css"
+        code=this.css
+        onChange=(action (mut this.css))
+        theme="vs-dark"
+        onReady=(action "editorReady")
+      }}
+      <div class="code-panel-heading">
+        HTML Viewer
+        <Hint @beaconName="htmlhint">
+            Use this to look up the classes and HTML elements you could write CSS styles for.
+            If you need to make changes to this, visit the Card Builder page instead.
+        </Hint>
+      </div>
+      {{code-editor
+        language="html"
+        code= this.markup
+        theme="vs-dark"
+        readOnly=true
+      }}
     </div>
-    {{code-editor
-      language="css"
-      code=this.css
-      onChange=(action (mut this.css))
-      theme="vs-dark"
-      onReady=(action "editorReady")
-    }}
-    <div class="code-panel-heading">
-      HTML Viewer
-      <Hint>
-        <p class="hint-text">
-          Use this to look up the classes and HTML elements you could write CSS styles for.
-          If you need to make changes to this, visit the Card Builder page instead.
-        </p>
-      </Hint>
-    </div>
-    {{code-editor
-      language="html"
-      code= this.markup
-      theme="vs-dark"
-      readOnly=true
-    }}
-  </div>
+  {{/if}}
 </div>

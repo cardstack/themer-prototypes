@@ -8,6 +8,7 @@ export default class CardEditorComponent extends Component {
   lastCode = '';
   @tracked css;
   @tracked markup;
+  @tracked showEditingPane = true;
 
   constructor() {
     super(...arguments)
@@ -61,5 +62,10 @@ export default class CardEditorComponent extends Component {
 
   checkForErrors(item) {
     return item.severity === 8
+  }
+
+  @action
+  toggleEditingPane() {
+    this.showEditingPane = !this.showEditingPane;
   }
 }
