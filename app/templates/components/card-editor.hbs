@@ -1,6 +1,9 @@
 <div class="grid-container">
   <div class="left-col">
-    <Hint />
+    <h1>Customize a Card's Style</h1>
+    <Hint>
+      Edit the CSS in the panel on the right. You will see the updates below automatically.
+    </Hint>
     <div class="display-wrapper">
       {{yield}}
     </div>
@@ -8,7 +11,14 @@
   </div>
 
   <div class="right-col">
-    <div class="code-panel-heading">CODE</div>
+    <div class="code-panel-heading">CSS</div>
+    <Hint>
+      Edit the code below to add some styles! For example, type
+      <code> font-size: 24px;</code>
+      or
+      <code>color: #0000FF;</code>
+      inside some of the brackets, and see your Card change.
+    </Hint>
     {{code-editor
       language="css"
       code=@css
@@ -17,11 +27,16 @@
       onReady=(action editorReady)
       onValidate=this.handleValidate
     }}
-
+    <div class="code-panel-heading">HTML (read-only)</div>
+    <Hint>
+      Use this to look up the classes and HTML elements you could write CSS styles for.
+      If you need to make changes to this, visit the Card Builder page instead.
+    </Hint>
     {{code-editor
       language="html"
       code= this.markup
       theme="vs-dark"
+      readOnly=true
     }}
   </div>
 </div>
