@@ -6,7 +6,8 @@ module.exports = function(deployTarget) {
     build: {},
     s3: {
       bucket: 'themer-prototypes-ember-deploy',
-      region: 'us-east-1'
+      region: 'us-east-1',
+      filePattern: '**/*.{html,js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,otf,wasm}'
     }
     // include other plugin configuration that applies to all deploy targets here
   };
