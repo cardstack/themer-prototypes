@@ -42,29 +42,58 @@ export default Service.extend({
 </div>
   `,
   eventCss: `.default-card {
-  font-family: sans-serif;
   text-align: center;
+  font-family: 'Parisienne', cursive;
 }
   
-.field-intro {}
+.field-intro {
+  padding: 30px 0;
+  font-size: 20px;
+}
+
+.flourish {
+  background-image: url("/images/flourish-pixabay-gordon-johnson.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100px;
+}
+
+.flourish-bottom {
+  transform: rotate(180deg);
+}
 
 .field-spouse-one {
-  font-family: 'Sail', cursive;
-  font-size: 30px;
+  font-size: 34px;
+  padding: 0 0 0.5em 0;
 }
 
 .field-spouse-two {
-  font-family: 'Sail', cursive;
-  font-size: 30px;
+  font-size: 34px;
+  padding-top: 0.2em;
 }
 
-.field-wedding-date {}
+.field-wedding-date {
+  font-size: 24px;
+  padding: 0.5em 0 2em 0;
+}
 
-.field-location {}
+.field-location {
+  font-family: cursive;
+}
 
-.field-rsvp-by {}
+.field-rsvp-by {
+  padding-top: 1em;
+  font-family: cursive;
+}
 
-.field-rsvp-link {}
+.field-rsvp-link {
+  font-family: cursive;
+}
+
+.ampersand {
+  font-size: 40px;
+}
   `,
   eventMarkup: `<div class="isolated-card default-card">
   <div class="field-renderer view-field field-intro field-type-cardstack-core-types-string">
@@ -72,17 +101,21 @@ export default Service.extend({
       We are delighted to invite you to the wedding of
     </span>
   </div>
+  <div class="flourish flourish-top"></div>
   <div class="field-renderer view-field field-spouse-one field-type-cardstack-core-types-string">
     <span>
       Willa Karciana
     </span>
   </div>
-  and
+  <div class="ampersand">
+    &
+  </div>
   <div class="field-renderer view-field field-spouse-two field-type-cardstack-core-types-string">
     <span>
       Ikram Eko
     </span>
   </div>
+  <div class="flourish flourish-bottom"></div>
   <div class="field-renderer view-field field-wedding-date field-type-cardstack-core-types-date">
     <span>
       August 8th, 2020
@@ -94,11 +127,11 @@ export default Service.extend({
       The Gorgeous Hotel, 96 Hilton Avenue, San Francisco, CA
     </span>
   </div>
-  <div class="request-text">
-      Your RSVP is requested by
-  </div>
-
+  
   <div class="field-renderer view-field field-rsvp-by field-type-cardstack-core-types-date">
+    <div class="request-text">
+        Your RSVP is requested by
+    </div>
     <span>
       September 6th, 2020
     </span>

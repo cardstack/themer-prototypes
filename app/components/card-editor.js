@@ -68,4 +68,9 @@ export default class CardEditorComponent extends Component {
   toggleEditingPane() {
     this.showEditingPane = !this.showEditingPane;
   }
+
+  @action
+  initialRender() {
+    this.preview()
+  }
 }

@@ -5,7 +5,7 @@
     <div class="display-wrapper">
       {{yield}}
     </div>
-    <style id="card-styles"></style>
+    <style  {{did-insert this.initialRender}} id="card-styles"></style>
     <button {{on "click" this.toggleEditingPane}}>
       {{if this.showEditingPane "Hide Editor" "Show Editor"}}
     </button>
