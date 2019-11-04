@@ -48,6 +48,10 @@ iframe {
   font-size: 1.5em;
 }
 
+.columns-container {
+  overflow-x: hidden;
+}
+
 .right-col {
   background-color: #161030;
   padding: 5%;
