@@ -1,14 +1,15 @@
 <div class="columns-container">
   <div class={{if this.showEditingPane "left-col left-col-collapse" "left-col left-col-expand"}}>
     <h1>Card Themer</h1>
-    <p><i>{{@cardName}}</i></p>
+    <p><i>{{@cardName}}</i>
+      <button {{on "click" this.toggleEditingPane}}>
+        {{if this.showEditingPane "Hide Editor" "Show Editor"}}
+      </button>
+    </p>
     <div class="display-wrapper">
       {{yield}}
     </div>
     <style  {{did-insert this.initialRender}} id="card-styles"></style>
-    <button {{on "click" this.toggleEditingPane}}>
-      {{if this.showEditingPane "Hide Editor" "Show Editor"}}
-    </button>
   </div>
 
  <div class={{if this.showEditingPane "right-col slide-in-right" "slide-out-right right-col"}} >

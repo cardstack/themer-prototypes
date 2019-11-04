@@ -4621,10 +4621,9 @@ ember-modifier-manager-polyfill@^1.1.0:
     ember-cli-version-checker "^2.1.2"
     ember-compatibility-helpers "^1.2.0"
 
-ember-monaco@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ember-monaco/-/ember-monaco-1.1.1.tgz#f9495630f716514bfab4a95b61621ca012f38c76"
-  integrity sha512-toWnkl8afX4i2Kiie3tpKifpwuKBxne12PM56JoiY8/470NVueOkgsRIFjuWoxnyv9UeZXb2uiVRWgE8snLo+A==
+ember-monaco@jenweber/ember-monaco#af1395c0f24ba8632d662af7e2fc35eb799892af:
+  version "0.0.0-development"
+  resolved "https://codeload.github.com/jenweber/ember-monaco/tar.gz/af1395c0f24ba8632d662af7e2fc35eb799892af"
   dependencies:
     "@babel/preset-env" "^7.2.3"
     broccoli-rollup "^2.1.1"
