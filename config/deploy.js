@@ -3,12 +3,12 @@
 
 module.exports = function(deployTarget) {
   let ENV = {
-    build: {}
+    build: {},
+    s3: {
+      bucket: 'themer-prototypes-ember-deploy',
+      region: 'us-east-1'
+    }
     // include other plugin configuration that applies to all deploy targets here
-  };
-
-  ENV.git = {
-    commitMessage: 'Deployed %@'
   };
 
   if (deployTarget === 'development') {
