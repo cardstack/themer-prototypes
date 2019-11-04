@@ -5,7 +5,7 @@
 .display-wrapper {
   background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 20px 0;
   color: #2e2d38;
   box-shadow: 0 10px 20px rgba(4, 2, 50, 0.604), 0 6px 6px rgba(4, 2, 50, 0.604);
@@ -82,4 +82,9 @@ iframe {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 10px;
   line-height: 1.5em;
+}
+
+iframe {
+  border: 1px solid gray;
+  border-radius: 5px;
 }
