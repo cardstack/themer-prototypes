@@ -75,7 +75,7 @@ export default Service.extend({
 
 .field-wedding-date {
   font-size: 24px;
-  padding: 0.5em 0 2em 0;
+  padding: 1em 0;
 }
 
 .field-location {
