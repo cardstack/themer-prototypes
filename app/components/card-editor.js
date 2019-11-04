@@ -20,7 +20,7 @@ export default class CardEditorComponent extends Component {
   editorReady (editor, monaco) {
     this.editor = editor
     this.monaco = monaco
-    setInterval(this.validateAndRender, 3000)
+    setInterval(this.validateAndRender, 2000)
   }
 
   @action
@@ -35,12 +35,12 @@ export default class CardEditorComponent extends Component {
     // if there are no errors in the CSS editor,
     // render the stylesheet. Let warnings and hints slide.
     // Technically we can skip this and let the browser make sense of errors...
-    let errors = this.monaco.getModelMarkers({})
-    if (errors.some(this.checkForErrors)) {
-      return
-    } else {
+    // let errors = this.monaco.getModelMarkers({})
+    // if (errors.some(this.checkForErrors)) {
+    //   return
+    // } else {
       this.preview()
-    }
+    // }
   }
 
   @action
