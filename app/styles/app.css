@@ -55,7 +55,7 @@ iframe {
 .right-col {
   background-color: #161030;
   padding: 30px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .left-col {
