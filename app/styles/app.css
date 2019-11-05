@@ -23,11 +23,6 @@ body {
   margin: 0;
 }
 
-iframe {
-  width: 100%;
-  height: 40vh;
-}
-
 .show-hint-btn {
   border-radius: 20px;
   color: white;
@@ -63,6 +58,8 @@ iframe {
   top: 0;
   right: 0;
   opacity: 90%;
+  resize: horizontal;
+  overflow: hidden;
 }
 
 .left-col {
@@ -90,6 +87,17 @@ iframe {
 }
 
 iframe {
+  border: none;
+  height: 30vh;
+  min-height: 100%;
+  width: 100%;
+}
+
+.frame-container {
+  min-height: 30vh;
+  resize: vertical;
+  overflow: hidden;
+  background-color: #1f1f1f;
   border: 1px solid gray;
   border-radius: 5px;
 }
