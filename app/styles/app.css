@@ -59,6 +59,7 @@ body {
   right: 0;
   resize: horizontal;
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(4, 2, 50, 0.604), 0 6px 6px rgba(4, 2, 50, 0.604);
 }
 
 .transparent {

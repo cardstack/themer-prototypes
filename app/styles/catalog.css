@@ -4,16 +4,18 @@
   grid-gap: 5%;
 }
 
-.catalog-item {
+.catalog-item.display-wrapper {
   min-height: 100px;
-  border: 3px solid white;
+  border: 1px solid white;
   font-size: 18px;
   text-decoration: none;
   line-height: 1.15em;
+  box-shadow: none;
 }
 
 .catalog-item:hover {
-  border: 3px solid black;
+  box-shadow: 0 10px 20px rgba(4, 2, 50, 0.604), 0 6px 6px rgba(4, 2, 50, 0.604);
+  border: 1px solid rgb(17, 17, 17);
 }
 
 .catalog-title {
