@@ -62,26 +62,24 @@ body {
 }
 
 .transparent {
-  /* must match opacity in right-edge.css animation */
+  /* must match opacity in right-edge.css */
   opacity: 92%;
 }
 
 .left-col {
-  /* width: 40%;
-  display: block;
-  float: left; */
   width: 90%;
   padding: 5%;
 }
 
-/* .left-col-expand {
+.no-overlap.left-col-expand {
   transition: width 0.2s ease-in-out 0.1s;
   width: 90%;
 }
 
-.left-col-collapse {
+.no-overlap.left-col-collapse {
   transition: width 0.2s ease-in-out;
-} */
+  width: 40%;
+}
 
 .hint-text {
   font-size: 16px;
