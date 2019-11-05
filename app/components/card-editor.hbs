@@ -1,7 +1,8 @@
 <div class="columns-container">
   <div class={{if this.showEditingPane "left-col left-col-collapse" "left-col left-col-expand"}}>
     <h1>Card Themer</h1>
-    <p><i>{{@cardName}}</i>
+    <p>
+      <i>{{@cardName}}</i>
       <button {{on "click" this.toggleEditingPane}}>
         {{if this.showEditingPane "Hide Editor" "Show Editor"}}
       </button>
@@ -12,13 +13,15 @@
     <style  {{did-insert this.initialRender}} id="card-styles"></style>
   </div>
 
- <div class={{if this.showEditingPane "right-col slide-in-right" "slide-out-right right-col"}} >
+  <div class="right-col transparent {{if this.showEditingPane "slide-in-right" "slide-out-right"}}" >
     <div class="code-panel-heading">
       CSS Editor
       <Hint @beaconName="csshint">
-          Edit the code below to add some styles! For example, try changing the 
-          <code> font-size</code>
-          to a different number, and see an instant preview.
+        Edit the code below to add some styles! For example, try changing the 
+        <code>
+          font-size
+        </code>
+        to a different number, and see an instant preview.
       </Hint>
     </div>
     {{code-editor

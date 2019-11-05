@@ -1,6 +1,6 @@
 @import 'catalog.css';
 @import 'hint.css';
-/* @import 'right-edge.css'; */
+@import 'right-edge.css';
 
 .display-wrapper {
   background-color: #f2f2f2;
@@ -57,9 +57,13 @@ body {
   z-index: 1;
   top: 0;
   right: 0;
-  opacity: 90%;
   resize: horizontal;
   overflow: hidden;
+}
+
+.transparent {
+  /* must match opacity in right-edge.css animation */
+  opacity: 92%;
 }
 
 .left-col {
