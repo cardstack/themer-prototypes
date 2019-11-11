@@ -9,7 +9,7 @@ export default class CardEditorComponent extends Component {
   @tracked css;
   @tracked markup;
   @tracked showEditingPane = true;
-  @tracked overlap = true;
+  @tracked isFullWidth = false;
 
   constructor() {
     super(...arguments)
@@ -66,17 +66,12 @@ export default class CardEditorComponent extends Component {
   }
 
   @action
-  toggleEditingPane() {
-    this.showEditingPane = !this.showEditingPane;
-  }
-
-  @action
-  toggleOverlap() {
-    this.overlap = !this.overlap;
-  }
-
-  @action
   initialRender() {
     this.preview()
+  }
+
+  @action
+  setChecked(propertyToSet, val) {
+    this[propertyToSet] = val;
   }
 }

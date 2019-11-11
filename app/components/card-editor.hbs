@@ -1,15 +1,11 @@
 <div class="columns-container">
-  <div class="{{if this.showEditingPane "left-col left-col-collapse" "left-col left-col-expand"}} {{if this.overlap "" "no-overlap"}}">
+  <div class="left-col {{if this.isFullWidth "left-col-expand" "left-col-collapse"}}">
     <h1>Card Themer</h1>
-    <p>
-      <i>{{@cardName}}</i>
-      <button {{on "click" this.toggleEditingPane}}>
-        {{if this.showEditingPane "Hide Editor" "Show Editor"}}
-      </button>
-      <button {{on "click" this.toggleOverlap}}>
-        {{if this.overlap "Squish" "Overlap"}}
-      </button>
-    </p>
+    <i>{{@cardName}}</i>
+    <div class="themer-controls">
+      <Checkbox @setChecked={{fn this.setChecked "showEditingPane"}} @checked={{this.showEditingPane}} @label="Show editing pane" />
+      <Checkbox @setChecked={{fn this.setChecked "isFullWidth"}} @checked={{this.isFullWidth}} @label="Responsive resize" />
+    </div>
     <div class="display-wrapper">
       {{yield}}
     </div>
