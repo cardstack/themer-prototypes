@@ -52,7 +52,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 ### Deploying
 
 ```sh
-AWS_PROFILE="ember-deploy" ember deploy
+AWS_PROFILE="ember-deploy" ember deploy production
 ```
 
 This will use the access keys following normal AWS resolution.
