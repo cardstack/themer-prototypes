@@ -68,15 +68,14 @@ body {
 .left-col {
   width: 90%;
   padding: 5%;
+  transition: width 0.2s ease-in-out;
 }
 
 .left-col-expand {
-  transition: width 0.2s ease-in-out 0.1s;
   width: 90%;
 }
 
 .left-col-collapse {
-  transition: width 0.2s ease-in-out;
   width: 40%;
 }
 
