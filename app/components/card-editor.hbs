@@ -1,6 +1,6 @@
 <div class="columns-container">
   <div class="left-col {{if this.isFullWidth "left-col-expand" "left-col-collapse"}}">
-    <h1>Card Themer</h1>
+    <h1>{{#link-to "index"}}Card Themer{{/link-to}}</h1>
     <i>{{@cardName}}</i>
     <div class="themer-controls">
       <Checkbox @setChecked={{fn this.setChecked "showEditingPane"}} @checked={{this.showEditingPane}} @label="Show editing pane" />

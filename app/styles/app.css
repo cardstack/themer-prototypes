@@ -116,3 +116,7 @@ iframe {
   --cs-component-color: white;
   --cs-component-border-color: white;
 }
+
+h1 a, h1 a:visited {
+  color: white;
+}
