@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import ENV from 'themer-frontend/config/environment';
 
 export default class CardEditorComponent extends Component {
   editor; // the instance of the editor
@@ -21,7 +22,12 @@ export default class CardEditorComponent extends Component {
   editorReady (editor, monaco) {
     this.editor = editor
     this.monaco = monaco
-    setInterval(this.validateAndRender, 2000)
+    if (ENV.environment === 'testing') {
+      console.log('SKIP')
+      return // skip polling
+    } else {
+      setInterval(this.validateAndRender, 2000)
+    }
   }
 
   @action

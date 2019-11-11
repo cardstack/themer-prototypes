@@ -3,24 +3,24 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | editor', function(hooks) {
+module('Integration | Component | card-editor', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Editor />`);
+    await render(hbs`<CardEditor />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom('.left-col').includesText('Card Themer');
 
     // Template block usage:
     await render(hbs`
-      <Editor>
+      <CardEditor>
         template block text
-      </Editor>
+      </CardEditor>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.left-col').includesText('template block text');
   });
 });
