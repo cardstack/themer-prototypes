@@ -1,7 +1,11 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { timeout } from "ember-concurrency";
+import { restartableTask } from "ember-concurrency-decorators";
 import ENV from 'themer-frontend/config/environment';
+
+const DEBOUNCE_MS = 250;
 
 export default class CardEditorComponent extends Component {
   editor; // the instance of the editor
@@ -16,6 +20,18 @@ export default class CardEditorComponent extends Component {
     super(...arguments)
     this.css = this.args.css
     this.markup = this.args.markup
+  }
+
+  @restartableTask
+  * updateCss(code) {
+    // Pause here for DEBOUNCE_MS milliseconds. Because this
+    // task is `restartable`, if the user starts typing again,
+    // the current search will be canceled at this point and
+    // start over from the beginning.
+    yield timeout(DEBOUNCE_MS)
+
+    this.css = code
+    this.preview()
   }
 
   @action
@@ -83,7 +99,6 @@ export default class CardEditorComponent extends Component {
 
   @action
   updateCode(code) {
-    this.css = code;
-    this.preview()
+    this.updateCss.perform(code);
   }
 }

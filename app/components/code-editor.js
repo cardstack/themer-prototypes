@@ -26,7 +26,7 @@ export default class CodeEditor extends Component {
 
   @action
   renderEditor(el) {
-    monaco.editor.onDidCreateEditor(this.onEditorReady)
+    // monaco.editor.onDidCreateEditor(this.onEditorReady)
     let editor = monaco.editor.create(el, {
       value: this.args.code,
       language: this.args.language,
