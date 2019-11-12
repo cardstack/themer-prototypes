@@ -1,3 +1,7 @@
+.cardhost-monaco-container {
+  min-height: 500px;
+}
+
 .slide-out-right {
 	-webkit-animation: slide-out-right 0.2s ease-in-out both;
 	        animation: slide-out-right 0.2s ease-in-out both;
