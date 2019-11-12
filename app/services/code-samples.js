@@ -142,5 +142,65 @@ export default Service.extend({
     </a>
   </div>
 </div>
+`,
+invoiceMarkup: `<div class="isolated-card default-card card-container">
+  <div class="field-renderer view-field field-title field-type-cardstack-core-types-string">
+    <span>
+      title:
+    </span>
+    <span>
+      Initial invoice
+    </span>
+  </div>
+
+  <div class="field-renderer view-field field-payable-to field-type-cardstack-core-types-string">
+    <span>
+      Payable to:
+    </span>
+    <span>
+      Daisy Chain
+    </span>
+  </div>
+
+  <div class="field-renderer view-field field-payable-from field-type-cardstack-core-types-string">
+    <span>
+      From:
+    </span>
+    <span>
+      Willa Karciana
+    </span>
+  </div>
+
+  <div class="field-renderer view-field field-amount-due field-type-cardstack-core-types-number">
+    <span>
+      Amount due today
+    </span>
+    <span>
+      2000
+    </span>
+
+  </div>
+
+  <div class="field-renderer view-field field-total-balance field-type-cardstack-core-types-number">
+
+    <span>
+      Total balance:
+    </span>
+    <span>
+      10000
+    </span>
+  </div>
+</div>`,
+invoiceCss: `.default-card {}
+
+.field-title {}
+
+.field-payable-to {}
+
+.field-payable-from
+
+.field-amount-due {}
+
+.field-total-balance {}
 `
 });
