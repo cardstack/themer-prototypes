@@ -18,6 +18,7 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@cardstack/requirejs-monaco-ember-polyfill": "^0.0.1",
     "@cardstack/ui-components": "^0.2.0",
     "@ember/edition-utils": "^1.1.1",
     "@ember/optional-features": "^1.0.0",
@@ -45,7 +46,6 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-monaco": "jenweber/ember-monaco#af1395c0f24ba8632d662af7e2fc35eb799892af",
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.1.3",
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/beta/shas/12a473da574e41ee10dccdd01ba06ff63027d495.tgz",
@@ -54,6 +54,8 @@
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
+    "monaco-editor": "^0.18.1",
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "qunit-dom": "^0.9.0"
   },
   "engines": {
