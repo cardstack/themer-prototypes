@@ -26,9 +26,10 @@
     {{code-editor
       language="css"
       code=this.css
-      onChange=(action (mut this.css))
+      updateCode=(action "updateCode")
       theme="vs-dark"
       onReady=(action "editorReady")
+      readOnly=false
     }}
     <div class="code-panel-heading">
       HTML Viewer
@@ -39,9 +40,8 @@
     </div>
     {{code-editor
       language="html"
-      code= this.markup
+      code=this.markup
       theme="vs-dark"
-      readOnly=true
     }}
   </div>
 </div>

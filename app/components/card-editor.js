@@ -80,4 +80,10 @@ export default class CardEditorComponent extends Component {
   setChecked(propertyToSet, val) {
     this[propertyToSet] = val;
   }
+
+  @action
+  updateCode(code) {
+    this.css = code;
+    this.preview()
+  }
 }
