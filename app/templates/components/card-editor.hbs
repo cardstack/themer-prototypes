@@ -23,24 +23,24 @@
         to a different number, and see an instant preview.
       </Hint>
     </div>
-    {{code-editor
-      language="css"
-      code=this.css
-      updateCode=(action "updateCode")
-      theme="vs-dark"
-      readOnly=false
-    }}
+    <CodeEditor
+      @language="css"
+      @code={{this.css}}
+      @updateCode={{action "updateCode"}}
+      @theme="vs-dark"
+      @readOnly={{false}}
+    />
     <div class="code-panel-heading">
       HTML Viewer
       <Hint @beaconName="htmlhint">
-          Use this to look up the classes and HTML elements you could write CSS styles for.
-          If you need to make changes to this, visit the Card Builder page instead.
+        Use this to look up the classes and HTML elements you could write CSS styles for.
+        If you need to make changes to this, visit the Card Builder page instead.
       </Hint>
     </div>
-    {{code-editor
-      language="html"
-      code=this.markup
-      theme="vs-dark"
-    }}
+    <CodeEditor
+      @language="html"
+      @code={{this.markup}}
+      @theme="vs-dark"
+    />
   </div>
 </div>
