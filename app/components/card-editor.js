@@ -3,13 +3,10 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { timeout } from "ember-concurrency";
 import { restartableTask } from "ember-concurrency-decorators";
-import ENV from 'themer-frontend/config/environment';
 
 const DEBOUNCE_MS = 250;
 
 export default class CardEditorComponent extends Component {
-  editor; // the instance of the editor
-  monaco;  // overall monaco state
   lastCode = '';
   @tracked css;
   @tracked markup;
@@ -35,38 +32,6 @@ export default class CardEditorComponent extends Component {
   }
 
   @action
-  editorReady (editor, monaco) {
-    this.editor = editor
-    this.monaco = monaco
-    if (ENV.environment === 'testing') {
-      console.log('SKIP')
-      return // skip polling
-    } else {
-      setInterval(this.validateAndRender, 2000)
-    }
-  }
-
-  @action
-  validateAndRender() {
-    if (this.lastCode === this.css) {
-      // skip rendering if content is unchanged since last render
-      return
-    }
-    
-    this.lastCode = this.css
-
-    // if there are no errors in the CSS editor,
-    // render the stylesheet. Let warnings and hints slide.
-    // Technically we can skip this and let the browser make sense of errors...
-    // let errors = this.monaco.getModelMarkers({})
-    // if (errors.some(this.checkForErrors)) {
-    //   return
-    // } else {
-      this.preview()
-    // }
-  }
-
-  @action
   preview() {
     var css = this.css
     let newStyle = document.createElement('style')
@@ -81,10 +46,6 @@ export default class CardEditorComponent extends Component {
     } else {
       newStyle.appendChild(document.createTextNode(css));
     }
-  }
-
-  checkForErrors(item) {
-    return item.severity === 8
   }
 
   @action
