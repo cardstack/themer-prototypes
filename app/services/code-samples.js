@@ -197,7 +197,7 @@ invoiceCss: `.default-card {}
 
 .field-payable-to {}
 
-.field-payable-from
+.field-payable-from {}
 
 .field-amount-due {}
 
