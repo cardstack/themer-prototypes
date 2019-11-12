@@ -12,15 +12,6 @@ module('Integration | Component | code-editor', function(hooks) {
 
     await render(hbs`<CodeEditor />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <CodeEditor>
-        template block text
-      </CodeEditor>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.cardhost-monaco-container').exists()
   });
 });

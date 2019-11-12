@@ -1,26 +1,17 @@
-// import { module, test } from 'qunit';
-// import { setupRenderingTest } from 'ember-qunit';
-// import { render } from '@ember/test-helpers';
-// import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import hbs from 'htmlbars-inline-precompile';
 
-// module('Integration | Component | invoice-card', function(hooks) {
-//   setupRenderingTest(hooks);
+module('Integration | Component | invoice-card', function(hooks) {
+  setupRenderingTest(hooks);
 
-//   test('it renders', async function(assert) {
-//     // Set any properties with this.set('myProperty', 'value');
-//     // Handle any actions with this.set('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-//     await render(hbs`<InvoiceCard />`);
+    await render(hbs`<InvoiceCard />`);
 
-//     assert.equal(this.element.textContent.trim(), '');
-
-//     // Template block usage:
-//     await render(hbs`
-//       <InvoiceCard>
-//         template block text
-//       </InvoiceCard>
-//     `);
-
-//     assert.equal(this.element.textContent.trim(), 'template block text');
-//   });
-// });
+    assert.dom('.default-card').includesText('Initial invoice')
+  });
+});
