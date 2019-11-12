@@ -1,8 +1,8 @@
 <div class="columns-container">
-  <div class="left-col {{if this.isFullWidth "left-col-expand" "left-col-collapse"}}">
+  <div class="left-col {{if this.isFullWidth "left-col-expand" "left-col-collapse"}}" data-test-left-column>
     <h1>{{#link-to "index"}}Card Themer{{/link-to}}</h1>
     <i>{{@cardName}}</i>
-    <div class="themer-controls">
+    <div class="themer-controls" data-test-checkboxes>
       <Checkbox @setChecked={{fn this.setChecked "showEditingPane"}} @checked={{this.showEditingPane}} @label="Show editing pane" />
       <Checkbox @setChecked={{fn this.setChecked "isFullWidth"}} @checked={{this.isFullWidth}} @label="Responsive resize" />
     </div>
@@ -12,7 +12,7 @@
     <style  {{did-insert this.initialRender}} id="card-styles"></style>
   </div>
 
-  <div class="right-col transparent {{if this.showEditingPane "slide-in-right" "slide-out-right"}}" >
+  <div class="right-col transparent {{if this.showEditingPane "slide-in-right" "slide-out-right"}}" data-test-right-column>
     <div class="code-panel-heading">
       CSS Editor
       <Hint @beaconName="csshint">

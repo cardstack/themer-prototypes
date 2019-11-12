@@ -2,15 +2,15 @@
   <h1>Choose a Card to edit:</h1>
 
   <div class="catalog-grid">
-    <LinkTo @route="cards.generic" class="display-wrapper catalog-item">
+    <LinkTo data-test-catalog-item="generic" @route="cards.generic" class="display-wrapper catalog-item">
       <div class="catalog-title">Generic</div>
       <div class="catalog-item-desc">A blank canvas for your creativity! This card contains very basic information and styles.</div>
     </LinkTo>
-    <LinkTo @route="cards.event" class="display-wrapper catalog-item">
+    <LinkTo data-test-catalog-item="event" @route="cards.event" class="display-wrapper catalog-item">
       <div class="catalog-title">Event page</div>
       <div class="catalog-item-desc">Help an event planner customize the public page for an upcoming wedding!</div>
     </LinkTo>
-    <LinkTo @route="cards.invoice" class="display-wrapper catalog-item">
+    <LinkTo data-test-catalog-item="invoice" @route="cards.invoice" class="display-wrapper catalog-item">
       <div class="catalog-title">Invoice</div>
       <div class="catalog-item-desc">Add custom branding to an invoice issued by an event photographer.</div>
     </LinkTo>
