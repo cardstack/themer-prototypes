@@ -2,9 +2,10 @@ import Component from '@glimmer/component';
 import requirejsPolyfill from '@cardstack/requirejs-monaco-ember-polyfill';
 import * as monaco from 'monaco-editor';
 import { action } from '@ember/object';
-import { timeout } from "ember-concurrency";
 import { restartableTask } from "ember-concurrency-decorators";
+import { timeout } from "ember-concurrency";
 
+const RESIZE_CHECK_INTERVAL = 2000;
 
 /**
  * <CodeEditor> takes the following arguments:
@@ -44,6 +45,10 @@ export default class CodeEditor extends Component {
     return this.args.updateCode || function() {};
   }
 
+  updateDimensions(opts) {
+    this.editor.layout(opts);
+  }
+
   @action
   renderEditor(el) {
     // This is called when the containing div has been rendered.
@@ -59,12 +64,30 @@ export default class CodeEditor extends Component {
     editor.onDidChangeModelContent(this.onUpdateCode)
     // Save editor instance locally, so we can reference it in other methods
     this.editor = editor;
+    this.startResizeWatcher.perform(el);
   }
 
   @action
   onUpdateCode() {
     // called whenever the code in the editor changes
     this.debounceAndUpdate.perform()
+  }
+
+  @restartableTask
+  * startResizeWatcher(wrapper) {
+    let { offsetWidth, offsetHeight } = wrapper;
+
+    while (true) {
+      yield timeout(RESIZE_CHECK_INTERVAL);
+
+      let { offsetWidth: newOffsetWidth, offsetHeight: newOffsetHeight } = wrapper;
+      if (offsetHeight !== newOffsetHeight || offsetWidth !== newOffsetWidth) {
+        offsetHeight = newOffsetHeight;
+        offsetWidth = newOffsetWidth;
+        let editorHeight = offsetHeight - 15; // So that the editor doesn't cover the resize corner
+        this.updateDimensions({height: editorHeight, width: offsetWidth});
+      }
+    }
   }
 
   @restartableTask
